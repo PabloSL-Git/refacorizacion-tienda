@@ -23,10 +23,6 @@ import java.util.Scanner;
 
 public class Tienda {
 
-    // public static ArrayList<String> n = new ArrayList<>(); // Nombres
-    // public static ArrayList<Double> p = new ArrayList<>(); // Precios
-    // public static ArrayList<Integer> s = new ArrayList<>(); // Stock
-
     public static ArrayList<Producto> productos = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -37,16 +33,6 @@ public class Tienda {
         productos.add(new Producto("Camiseta", 15.0, 10));
         productos.add(new Producto("Pantalón", 30.0, 5));
         productos.add(new Producto("Zapatos", 45.0, 2));
-
-        // n.add("Camiseta");
-        // p.add(15.0);
-        // s.add(10);
-        // n.add("Pantalón");
-        // p.add(30.0);
-        // s.add(5);
-        // n.add("Zapatos");
-        // p.add(45.0);
-        // s.add(2);
 
         while (true) {
             System.out.println("\n--- TIENDA ---");
