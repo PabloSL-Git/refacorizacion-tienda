@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * CÓDIGO CON CODESMELLING
+
  * 
 
  * - Eliminar la "Clase Dios" que es todo el main
 
  * - Eliminar números fijos introducidos en el código (no están dentro de variables).
- * - Mejorar la gestión de logs (Patrón Singleton).
+
  */
 
 /**
@@ -23,8 +23,13 @@ import java.util.Scanner;
 
 /**
  * refactor/singleton
- * para mas visibilidad e convertido los ifs a un switch, ahora procedere a
+ * Para mas visibilidad e convertido los ifs a un switch, ahora procedere a
  * implementar el singleton para el log, creando una clase y llamando metodos
+ */
+
+/**
+ * refactor/numeros_fijos
+ * Se añadira variable ofertaPorcentaje para aclarar origen y proposito
  */
 
 public class Tienda {
@@ -51,6 +56,8 @@ public class Tienda {
 
             int op = sc.nextInt();
             sc.nextLine();
+
+            double ofertaPorcentaje = 90;
 
             switch (op) {
                 case 1 -> {
@@ -114,10 +121,10 @@ public class Tienda {
                             // Hay números fijos que se utilizan en el código
                             if (total > 50) {
                                 System.out.println("¡Oferta! Descuento aplicado por compra superior a 50€");
-                                total = total * 0.90;
+                                total = total * ofertaPorcentaje;
                             }
 
-                            productos.get(pos).setStock(productos.get(pos).getStock() - cant); // Actualizar stock
+                            productos.get(pos).setStock(productos.get(pos).getStock() - cant);
                             System.out.println("Venta realizada. Total a pagar: " + total + "€");
 
                             Logger logger = Logger.getInstance();
