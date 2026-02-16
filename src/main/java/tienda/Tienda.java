@@ -6,9 +6,9 @@ import java.util.Scanner;
 /**
  * CÓDIGO CON CODESMELLING
  * 
- * TODO: Este código necesita un refactorización urgente.
+
  * - Eliminar la "Clase Dios" que es todo el main
- * - Usar programación orientada a objetos
+
  * - Eliminar números fijos introducidos en el código (no están dentro de variables).
  * - Mejorar la gestión de logs (Patrón Singleton).
  */
@@ -22,10 +22,13 @@ import java.util.Scanner;
  */
 
 /**
- * refactor/
+ * refactor/singleton
+ * para mas visibilidad e convertido los ifs a un switch, ahora procedere a
+ * implementar el singleton para el log, creando una clase y llamando metodos
  */
 
 public class Tienda {
+    public static final Scanner sc = new Scanner(System.in);
 
     public static ArrayList<Producto> productos = new ArrayList<>();
 
@@ -33,12 +36,12 @@ public class Tienda {
 
         // Datos de prueba iniciales
 
-        Scanner sc = new Scanner(System.in);
         productos.add(new Producto("Camiseta", 15.0, 10));
         productos.add(new Producto("Pantalón", 30.0, 5));
         productos.add(new Producto("Zapatos", 45.0, 2));
 
         while (true) {
+
             System.out.println("\n--- TIENDA ---");
             System.out.println("1. Añadir producto");
             System.out.println("2. Mostrar inventario");
@@ -117,15 +120,10 @@ public class Tienda {
                             productos.get(pos).setStock(productos.get(pos).getStock() - cant); // Actualizar stock
                             System.out.println("Venta realizada. Total a pagar: " + total + "€");
 
-                            // Debería ser Singleton
-                            System.out.println("[LOG SYSTEM]: Venta de " + cant + "x "
-                                    + productos.get(pos).getNombre() + "registrada.");
-
-                            if (productos.get(pos).getStock() < 3) {
-
-                                System.out.println("[LOG SYSTEM]: ALERTA DE STOCK BAJO para "
-                                        + productos.get(pos).getNombre());
-                            }
+                            Logger logger = Logger.getInstance();
+                            logger.log("Venta de " + cant + "x "
+                                    + productos.get(pos).getNombre()
+                                    + " realizada por " + total + "€");
 
                         } else {
                             System.out.println("Error: No hay suficiente stock.");
