@@ -12,6 +12,8 @@ import java.util.Scanner;
  * - Eliminar números fijos introducidos en el código (no están dentro de variables).
  * - Mejorar la gestión de logs (Patrón Singleton).
  */
+
+
 public class Tienda {
 
     public static ArrayList<String> n = new ArrayList<>(); // Nombres
