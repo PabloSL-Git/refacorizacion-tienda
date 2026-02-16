@@ -32,6 +32,15 @@ import java.util.Scanner;
  * Se añadira variable ofertaPorcentaje para aclarar origen y proposito
  */
 
+/**
+ * refactor/class_god
+ * Separe el bulto del codigo en una clse metodos para mayor claridad del
+ * programa,
+ * ademas se añadiran anotaciones para aclarar proposito de codigo,
+ * ademas se añadio otra variable que no se descubrio anteriormente,
+ * cantidadOferta
+ */
+
 public class Tienda {
     public static final Scanner sc = new Scanner(System.in);
 
@@ -56,8 +65,6 @@ public class Tienda {
 
             int op = sc.nextInt();
             sc.nextLine();
-
-            double ofertaPorcentaje = 90;
 
             switch (op) {
                 case 1 -> {
@@ -107,37 +114,7 @@ public class Tienda {
                         }
                     }
 
-                    if (pos != -1) {
-                        System.out.println("Producto encontrado: " + productos.get(pos).getNombre());
-                        System.out.println("Precio: " + productos.get(pos).getPrecio() + "€ | Stock: "
-                                + productos.get(pos).getStock());
-
-                        System.out.print("Cantidad a comprar: ");
-                        int cant = sc.nextInt();
-
-                        if (productos.get(pos).getStock() >= cant) {
-                            double total = cant * productos.get(pos).getPrecio();
-
-                            // Hay números fijos que se utilizan en el código
-                            if (total > 50) {
-                                System.out.println("¡Oferta! Descuento aplicado por compra superior a 50€");
-                                total = total * ofertaPorcentaje;
-                            }
-
-                            productos.get(pos).setStock(productos.get(pos).getStock() - cant);
-                            System.out.println("Venta realizada. Total a pagar: " + total + "€");
-
-                            Logger logger = Logger.getInstance();
-                            logger.log("Venta de " + cant + "x "
-                                    + productos.get(pos).getNombre()
-                                    + " realizada por " + total + "€");
-
-                        } else {
-                            System.out.println("Error: No hay suficiente stock.");
-                        }
-                    } else {
-                        System.out.println("Error: Producto no encontrado.");
-                    }
+                    Metodos.comprar(pos, productos);
 
                 }
                 case 4 -> {
