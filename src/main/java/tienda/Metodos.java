@@ -11,7 +11,7 @@ public class Metodos {
         double ofertaPorcentaje = 90;
         int cantidadOferta = 50;
 
-        if (pos != -1) {
+        if (pos != -1) { // enseña producto y pregunta que hacer
             System.out.println("Producto encontrado: " + productos.get(pos).getNombre());
             System.out.println("Precio: " + productos.get(pos).getPrecio() + "€ | Stock: "
                     + productos.get(pos).getStock());
@@ -19,10 +19,10 @@ public class Metodos {
             System.out.print("Cantidad a comprar: ");
             int cant = sc.nextInt();
 
-            if (productos.get(pos).getStock() >= cant) {
+            if (productos.get(pos).getStock() >= cant) { // operacion
                 double total = cant * productos.get(pos).getPrecio();
 
-                if (total > cantidadOferta) {
+                if (total > cantidadOferta) { // oferta
                     System.out.println("¡Oferta! Descuento aplicado por compra superior a 50€");
                     total = total * ofertaPorcentaje;
                 }
@@ -30,7 +30,7 @@ public class Metodos {
                 productos.get(pos).setStock(productos.get(pos).getStock() - cant);
                 System.out.println("Venta realizada. Total a pagar: " + total + "€");
 
-                Logger logger = Logger.getInstance();
+                Logger logger = Logger.getInstance(); // logg de transacciones 
                 logger.log("Venta de " + cant + "x "
                         + productos.get(pos).getNombre()
                         + " realizada por " + total + "€");

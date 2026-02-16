@@ -91,7 +91,7 @@ public class Tienda {
                     if (productos.isEmpty()) {
                         System.out.println("No hay productos.");
                     } else {
-                        for (int i = 0; i < productos.size(); i++) {
+                        for (int i = 0; i < productos.size(); i++) { // investiga e indica productos
 
                             System.out.println(i + ". " + productos.get(i).getNombre() + " - " +
                                     productos.get(i).getPrecio() + "€ - Stock: " + productos.get(i).getStock());
@@ -108,13 +108,13 @@ public class Tienda {
                     int pos = -1;
                     for (int i = 0; i < productos.size(); i++) {
 
-                        if (productos.get(i).getNombre().equalsIgnoreCase(prod)) {
+                        if (productos.get(i).getNombre().equalsIgnoreCase(prod)) { // localiza producto
                             pos = i;
                             break;
                         }
                     }
 
-                    Metodos.comprar(pos, productos);
+                    Metodos.comprar(pos, productos); // metodo calcula compra
 
                 }
                 case 4 -> {
