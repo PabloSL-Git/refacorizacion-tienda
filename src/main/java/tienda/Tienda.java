@@ -77,54 +77,58 @@ public class Tienda {
                     System.out.println("No hay productos.");
                 } else {
                     for (int i = 0; i < productos.size(); i++) {
-                        System.out.println(i + ". " + productos.get(i) + " - " + productos.get(i) + "€ - Stock: "
-                                + productos.get(i));
+
+                        Producto aux = productos.get(i);
+
+                        System.out.println(i + ". " + aux.getNombre() + " - " + aux.getPrecio() 
+                        + "€ - Stock: " + aux.getStock());
                     }
                 }
 
-            // } else if (op == 3) {
-            //     System.out.println("\n--- VENTA ---");
-            //     System.out.print("Introduzca nombre del producto a vender: ");
-            //     String prod = sc.next();
+                // } else if (op == 3) {
+                // System.out.println("\n--- VENTA ---");
+                // System.out.print("Introduzca nombre del producto a vender: ");
+                // String prod = sc.next();
 
-            //     int pos = -1;
-            //     for (int i = 0; i < n.size(); i++) {
-            //         if (n.get(i).equalsIgnoreCase(prod)) {
-            //             pos = i;
-            //             break;
-            //         }
-            //     }
+                // int pos = -1;
+                // for (int i = 0; i < n.size(); i++) {
+                // if (n.get(i).equalsIgnoreCase(prod)) {
+                // pos = i;
+                // break;
+                // }
+                // }
 
-            //     if (pos != -1) {
-            //         System.out.println("Producto encontrado: " + n.get(pos));
-            //         System.out.println("Precio: " + p.get(pos) + "€ | Stock: " + s.get(pos));
-            //         System.out.print("Cantidad a comprar: ");
-            //         int cant = sc.nextInt();
+                // if (pos != -1) {
+                // System.out.println("Producto encontrado: " + n.get(pos));
+                // System.out.println("Precio: " + p.get(pos) + "€ | Stock: " + s.get(pos));
+                // System.out.print("Cantidad a comprar: ");
+                // int cant = sc.nextInt();
 
-            //         if (s.get(pos) >= cant) {
-            //             double total = cant * p.get(pos);
+                // if (s.get(pos) >= cant) {
+                // double total = cant * p.get(pos);
 
-            //             // Hay números fijos que se utilizan en el código
-            //             if (total > 50) {
-            //                 System.out.println("¡Oferta! Descuento aplicado por compra superior a 50€");
-            //                 total = total * 0.90;
-            //             }
+                // // Hay números fijos que se utilizan en el código
+                // if (total > 50) {
+                // System.out.println("¡Oferta! Descuento aplicado por compra superior a 50€");
+                // total = total * 0.90;
+                // }
 
-            //             s.set(pos, s.get(pos) - cant); // Actualizar stock
-            //             System.out.println("Venta realizada. Total a pagar: " + total + "€");
+                // s.set(pos, s.get(pos) - cant); // Actualizar stock
+                // System.out.println("Venta realizada. Total a pagar: " + total + "€");
 
-            //             // Debería ser Singleton
-            //             System.out.println("[LOG SYSTEM]: Venta de " + cant + "x " + n.get(pos) + " registrada.");
-            //             if (s.get(pos) < 3) {
-            //                 System.out.println("[LOG SYSTEM]: ALERTA DE STOCK BAJO para " + n.get(pos));
-            //             }
+                // // Debería ser Singleton
+                // System.out.println("[LOG SYSTEM]: Venta de " + cant + "x " + n.get(pos) + "
+                // registrada.");
+                // if (s.get(pos) < 3) {
+                // System.out.println("[LOG SYSTEM]: ALERTA DE STOCK BAJO para " + n.get(pos));
+                // }
 
-            //         } else {
-            //             System.out.println("Error: No hay suficiente stock.");
-            //         }
-            //     } else {
-            //         System.out.println("Error: Producto no encontrado.");
-            //     }
+                // } else {
+                // System.out.println("Error: No hay suficiente stock.");
+                // }
+                // } else {
+                // System.out.println("Error: Producto no encontrado.");
+                // }
 
             } else if (op == 4) {
                 System.out.println("Saliendo...");
