@@ -4,16 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
-
- * 
-
- * - Eliminar la "Clase Dios" que es todo el main
-
- * - Eliminar números fijos introducidos en el código (no están dentro de variables).
-
- */
-
-/**
  * refactor/encapsulate
  * Creado objeto producto e implementar cambios al programa para usarlo, creando
  * una lista unica
