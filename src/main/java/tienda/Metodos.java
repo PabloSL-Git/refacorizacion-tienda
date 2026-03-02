@@ -8,7 +8,7 @@ public class Metodos {
 
     public static void comprar(int pos, ArrayList<Producto> productos) {
 
-        double ofertaPorcentaje = 90;
+        double ofertaPorcentaje = 0.90;
         int cantidadOferta = 50;
 
         if (pos != -1) { // enseña producto y pregunta que hacer
